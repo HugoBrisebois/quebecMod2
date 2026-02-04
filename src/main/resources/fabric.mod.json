@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "quebec",
+  "version": "${version}",
+  "name": "quebec",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/quebec/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "github.com.quebec.client.QuebecDataGenerator"
+    ],
+    "client": [
+      "github.com.quebec.client.QuebecClient"
+    ],
+    "main": [
+      "github.com.quebec.Quebec"
+    ]
+  },
+  "mixins": [
+    "quebec.mixins.json",
+    {
+      "config": "quebec.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
